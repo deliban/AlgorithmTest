@@ -1,7 +1,11 @@
 #include"MyDsp.h"
 #include <stdio.h>
+#include<iostream>
 #include <stdlib.h>
 #include< string.h>
+
+using namespace std;
+
 char base64_map[65] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 char base64_decode_map[256] = 
 {
@@ -24,6 +28,16 @@ unsigned char test[100] = "testsecret&";
 unsigned char test1[100] = "testsecret&";
 unsigned char encode[100], decode[100];
 unsigned char test2[100] = "Y9eWn4nF8QPh3c4zAFkM/k/u7eA=";
+
+/***********************************************************************
+Function:base64_encode                 //函数名字
+Desc:    编码                  //函数功能描述
+Input:                         //要输入的参数
+* @param                       //参数说明
+Output:  无                        // 对输出参数的说明。
+Return:  无                        // 函数返回值的说明
+Others:  无                        // 其它说明；没有就用nullptr表示
+**************************************************************************/
 void base64_encode(const char *src, int src_len, char *dst)
 {
 	int i = 0, j = 0;
@@ -53,7 +67,15 @@ void base64_encode(const char *src, int src_len, char *dst)
 	dst[j] = '\0';
 }
 
-//若是不是4的倍数，强制解码 
+/***********************************************************************
+Function:base64_decode                 //函数名字
+Desc:    解码                 //函数功能描述
+Input:                         //要输入的参数
+* @param                       //参数说明
+Output:  无                        // 对输出参数的说明。
+Return:  无                        // 函数返回值的说明
+Others:  无                       若是不是4的倍数，强制解码 
+**************************************************************************/
 void base64_decode(const char *src, int src_len, char *dst)
 {
 	int i = 0, j = 0;
@@ -75,6 +97,15 @@ void base64_decode(const char *src, int src_len, char *dst)
 	dst[j] = '\0';
 }
 
+/***********************************************************************
+Function:MyBase64Test                 //函数名字
+Desc:    测试base64编解码                  //函数功能描述
+Input:                         //要输入的参数
+* @param                       //参数说明
+Output:  无                        // 对输出参数的说明。
+Return:  无                        // 函数返回值的说明
+Others:  无                        // 其它说明；没有就用nullptr表示
+**************************************************************************/
 void MyBase64Test(void)
 {
 
@@ -88,4 +119,21 @@ void MyBase64Test(void)
 	base64_decode((char*)test2, strlen((char*)test2), (char*)decode);
 	printf("%s\n", decode);
 
+}
+
+/***********************************************************************
+Function:Verfy                 //函数名字
+Desc:    验证                  //函数功能描述
+Input:                         //要输入的参数
+* @param                       //参数说明
+Output:  无                        // 对输出参数的说明。
+Return:  无                        // 函数返回值的说明
+Others:  无                        // 其它说明；没有就用nullptr表示
+**************************************************************************/
+void Verfy(void)
+{
+	char *str1 = "hello";
+	cout << str1 << endl;
+	str1[0] = 'H';        //char *str1 = "hello"; 相当于const char *str1 = "hello",常量字符串，赋值后不能修改
+	cout << str1 << endl;
 }

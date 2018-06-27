@@ -28,7 +28,8 @@ using namespace std;
 
 int main(void)
 {
-	MyTestFunctionPointer();
+	//MyTestFunctionPointer();
+	Verfy();
 	getchar();
 	return 0;
 }
