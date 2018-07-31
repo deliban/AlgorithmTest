@@ -66,7 +66,7 @@ void PostOrdeTraverse(BiTree T)
 Function: CreateBiTree
 Desc:  按前序输入二叉树中的结点的值（一个字符），#表示空树，构造二叉链表表示二叉树
 Input:	BiTree *T
-* @param  二叉树
+* @param  指针的指针（指向BiTNode的指针的指针），这样可以修改指针的值，传入指针只能修改指针指向的内容
 Output:	nullptr
 Return:	nullptr
 Others:	nullptr

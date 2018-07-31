@@ -48,6 +48,24 @@
     <ClCompile Include="SHA1.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MyTree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyFourOperations.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyLongRepeatedSubstring.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MyRabbit.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="MySort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="test1.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="MyString.h">
@@ -78,6 +96,24 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="SHA1.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyTree.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyFourOperations.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MySort.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyRabbit.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="MyLongRepeatedSubstring.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test1.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

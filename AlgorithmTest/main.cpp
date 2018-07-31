@@ -23,14 +23,26 @@ Others:	nullptr
 #include< string.h>
 #include "MyTest.h"
 #include"MyInOut.h"
+#include "MyTree.h"
+#include"MySort.h"
+#include"test1.h"
+#include"MyFourOperations.h"
 
 using namespace std;
 
 int main(void)
 {
-	//MyTestFunctionPointer();
+	/*MyTestFunctionPointer();
 	Verfy();
-	getchar();
+
+	MyTreeTest();
+	MyConversionTest();*/
+	MySortTest();
+	//TypeSize();
+	//JudgeEndian();
+	//MyFourOperations();
+	system("pause");
 	return 0;
 }
+
 

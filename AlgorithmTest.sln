@@ -7,16 +7,22 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AlgorithmTest", "AlgorithmT
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|ARM = Debug|ARM
 		Debug|x64 = Debug|x64
 		Debug|x86 = Debug|x86
+		Release|ARM = Release|ARM
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Debug|ARM.ActiveCfg = Debug|ARM
+		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Debug|ARM.Build.0 = Debug|ARM
 		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Debug|x64.ActiveCfg = Debug|x64
 		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Debug|x64.Build.0 = Debug|x64
 		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Debug|x86.ActiveCfg = Debug|Win32
 		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Debug|x86.Build.0 = Debug|Win32
+		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Release|ARM.ActiveCfg = Release|ARM
+		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Release|ARM.Build.0 = Release|ARM
 		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Release|x64.ActiveCfg = Release|x64
 		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Release|x64.Build.0 = Release|x64
 		{5692EFF9-872E-4593-92ED-C13E2C68BFB7}.Release|x86.ActiveCfg = Release|Win32
@@ -24,5 +30,8 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0394D14B-29A9-4A04-9B36-D1480F6442B3}
 	EndGlobalSection
 EndGlobal

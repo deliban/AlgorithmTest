@@ -6,6 +6,66 @@
 
 using namespace std;
 
+typedef union
+{
+	char ch;
+	int data;
+}MyUnion;
+
+static union
+{
+	char c[4];
+	unsigned long mylong;
+
+} endian_test = { { 'l', '?', '?', 'b' } };
+#define ENDIANNESS ((char)endian_test.mylong)
+/**************************************************
+Function: void JudgeEndian(void)
+Desc:  大小端判断 采用联合体union来判断
+Input:
+* @param  -
+Output:	nullptr
+Return:	nullptr
+Others:	nullptr
+*******************************************************/
+void JudgeEndian(void)
+{
+	MyUnion temp;
+	temp.data = 0x12345678;
+	if (temp.ch == 0x78)
+		cout << "Little-Endian" << endl;
+	else
+		cout << "Big-Endian" << endl;
+
+	/*Linux操作系统的源码中的判断*/
+	if (ENDIANNESS == 'l')
+		cout << "Little-Endian" << endl;
+	else
+		cout << "Big-Endian" << endl;
+
+
+}
+
+/**************************************************
+Function: void JudgeEndian1(void)
+Desc:  大小端判断，采用类型转换时截断的方式来判断
+Input:
+* @param  -
+Output:	nullptr
+Return:	nullptr
+Others:	nullptr
+*******************************************************/
+void JudgeEndian1(void)
+{
+	int data = 0x12345678;
+	char * p = (char*)&data;
+
+	if (*p == 0x78)
+		cout << "Little-Endian" << endl;
+	else
+		cout << "Big-endian" << endl;
+}
+
 char base64_map[65] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/";
 char base64_decode_map[256] = 
 {
