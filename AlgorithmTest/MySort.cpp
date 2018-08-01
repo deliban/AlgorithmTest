@@ -1,5 +1,6 @@
 #include "MySort.h"
 #include <iostream>
+#include<algorithm>
 #include<stdio.h>
 using namespace std;
 
@@ -28,6 +29,9 @@ void MySortTest(void)
 	//MergeSortRecursion(array, 0, len - 1);
 	//MergeSortIteration(array, len);
 	HeapifySort(array, len);
+
+	//sort(a,a+n) ±Ì æ∂‘a[0] a[1] a[2] ... a[n-1] ≈≈–Ú
+	sort(array, array + len);
 
 	for (int i = 0; i < len; i++)
 		cout << array[i];

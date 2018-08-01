@@ -170,6 +170,7 @@
     <ClCompile Include="MyInOut.cpp" />
     <ClCompile Include="MyLongRepeatedSubstring.cpp" />
     <ClCompile Include="MyRabbit.cpp" />
+    <ClCompile Include="MySearch.cpp" />
     <ClCompile Include="MySort.cpp" />
     <ClCompile Include="MyString.cpp" />
     <ClCompile Include="MyTest.cpp" />
@@ -188,6 +189,7 @@
     <ClInclude Include="MyInOut.h" />
     <ClInclude Include="MyLongRepeatedSubstring.h" />
     <ClInclude Include="MyRabbit.h" />
+    <ClInclude Include="MySearch.h" />
     <ClInclude Include="MySort.h" />
     <ClInclude Include="MyString.h" />
     <ClInclude Include="MyTest.h" />
