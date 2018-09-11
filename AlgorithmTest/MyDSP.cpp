@@ -197,3 +197,327 @@ void Verfy(void)
 	str1[0] = 'H';        //char *str1 = "hello"; 相当于const char *str1 = "hello",常量字符串，赋值后不能修改
 	cout << str1 << endl;
 }
+/***********************************************************************
+Function:ConvertIntToByteArray                 //函数名字
+Desc:    整型数据转成字节数组                  //函数功能描述
+Input:    int data, char array[]                     //要输入的参数
+* @param  data - 要转换的整数                   //参数说明
+* @param  array - 转换后存储的数组
+Output:  无                        // 对输出参数的说明。
+Return:  无                        // 函数返回值的说明
+Others:  无                        // 其它说明；没有就用nullptr表示
+**************************************************************************/
+void ConvertIntToByteArray(int data, char array[])
+{
+	int size = sizeof(data);
+	for (int i = 0; i < size; ++i)
+	{
+		array[i] = data >> (8 * i);
+		cout << array[i];
+	}
+}
+
+/***********************************************************************
+Function:ConvertIntToByteArray                 //函数名字
+Desc:    整型数据转成字节数组                  //函数功能描述
+Input:    int data, char array[]                     //要输入的参数
+* @param  data - 要转换的整数                   //参数说明
+* @param  array - 转换后存储的数组
+Output:  无                        // 对输出参数的说明。
+Return:  无                        // 函数返回值的说明
+Others:  无                        // 其它说明；没有就用nullptr表示
+**************************************************************************/
+char * findcommon2(char a[], char b[])
+{
+	int size1 = strlen(a);
+	int size2 = strlen(b);
+	int size3 = size1 > size2 ? size1 : size2;
+
+	char *c = (char*)malloc(size3);
+
+	int i = 0, j = 0, k = 0;
+	while (i<size1 && j<size2)
+	{
+		if (a[i] == b[j])
+		{
+			*c = a[i];
+			c++;
+			i++;
+			j++;
+		}
+			
+		if (a[i]>b[j])
+			j++;
+		if (a[i]<b[j])
+			i++;
+	}
+	return c;
+}
+
+/***********************************************************************
+输出数组中第几大数字在数组中的位置
+**************************************************************************/
+/*
+#include<algorithm>
+#include<stdio.h>
+#include<string.h>
+using namespace std;
+
+bool cmp(int x, int y)
+{
+	return x>y;
+}
+int removeDel(int s[], int count)
+{
+	int newlen = 0;
+	int j = 0;
+	for (int i = 0, j = 0; i < count && j < count; i++)
+	{
+		while (j < count &&s[i] == s[j])
+			j++;
+		if (j>i + 1 && j<count)
+			s[i + 1] = s[j];
+		newlen++;
+	}
+	return newlen;
+}
+int main(void)
+{
+	int original[100] = { 0 };
+
+	int n = 0, i;
+	char c;
+	int number = 0;
+	int len;
+	if (scanf("%d", &original[n]) == 1)
+	{
+		n++;
+	}
+
+	while (1)
+	{
+		scanf("%c", &c);
+		if (c != ',')
+		{
+			if (c == ' ')
+			{
+				scanf("%d", &number);
+
+			}
+			break;
+		}
+		if (scanf("%d", &original[n]) == 1)
+		{
+			n++;
+		}
+		else
+		{
+			break;
+		}
+	}
+	int newSort[100];
+
+	//for (int i = 0; i < n; i++)
+	//	newSort[i] = original[i];
+
+	memcpy(newSort,original,sizeof(original[0])*n);
+
+	sort(newSort, newSort + n, cmp);
+
+	//len = removeDel(s, n);
+
+	int index = 0;
+	for (int i = 0; i < n; i++)
+	{
+		if (original[i] == newSort[number - 1])
+		{
+			index = i;
+			break;
+		}
+
+	}
+
+	printf("%d", index + 1);
+
+	system("pause");
+
+	return 0;
+}
+
+*/
+
+/*检测IP是否合法*/
+/*
+//bool isIpFormatRiht(char *ipAddress)
+//
+//{//判断IP地址是否合法
+//
+//	int a, b, c, d;
+//
+//	if ((sscanf(ipAddress, "%d.%d.%d.%d", &a, &b, &c, &d) == 4)
+//
+//		&& (a >= 0 && a <= 255)
+//
+//		&& (b >= 0 && b <= 255)
+//
+//		&& (c >= 0 && c <= 255)
+//
+//		&& (d >= 0 && d <= 255))
+//
+//	{
+//
+//		return 1;
+//
+//	}
+//
+//	return 0;
+//
+//}
+*/
+
+
+//#include<iostream>
+//
+//#include<vector>
+//
+//#include<string>
+//
+//#include<algorithm>
+//
+//#include<map>
+//
+//#include<queue>
+//
+//#include<functional>
+//
+//using namespace std;
+//
+////递归找出长度为pwdLen的组合
+//
+//void comB(string str, vector<string> &res, string &temp, int m, int pwdLen)
+//
+//{
+//
+//	if (temp.size() == pwdLen) //达到长度，则保存，否则递归
+//
+//	{
+//
+//		res.push_back(temp);
+//
+//	}
+//
+//	else
+//
+//	{
+//
+//		if (m < str.size())
+//
+//		{
+//
+//			temp.push_back(str[m]);
+//
+//			comB(str, res, temp, m + 1, pwdLen);
+//
+//			temp.pop_back();
+//
+//			comB(str, res, temp, m + 1, pwdLen);
+//
+//		}
+//
+//	}
+//
+//}
+//
+//vector<string> getpasswd(string userName, string motherName, int pwdLen)
+//
+//{
+//
+//	//先求出公共子集，不区分大小写
+//
+//	map<char, int> hash, hash1;
+//
+//	int l1 = userName.size(), l2 = motherName.size();
+//
+//	for (int i = 0; i < l1; ++i)
+//
+//	{
+//
+//		if (userName[i] >= 'A' && userName[i] <= 'Z')
+//
+//			userName[i] += 32;
+//
+//		hash[userName[i]] ++;
+//
+//	}
+//
+//	for (int i = 0; i < l2; ++i)
+//
+//	{
+//
+//		if (motherName[i] >= 'A' && motherName[i] <= 'Z')
+//
+//			motherName[i] += 32;
+//
+//		hash1[motherName[i]] ++;
+//
+//	}
+//
+//	cout << userName << endl;
+//
+//	cout << motherName << endl;
+//
+//	string strSame;
+//
+//	for (auto v : hash)
+//
+//	{
+//
+//		if (hash1.find(v.first) != hash1.end())
+//
+//			strSame.push_back(v.first);
+//
+//	}
+//
+//	cout << strSame << endl;
+//
+//	int n = strSame.size();
+//
+//	if (n < pwdLen)  //长度不够，直接输出{}
+//
+//		return{};
+//
+//	vector<string> res;
+//
+//	string temp;
+//
+//	comB(strSame, res, temp, 0, pwdLen);
+//
+//	return res;
+//
+//}
+//
+//int main()
+//
+//{
+//
+//	string str("RadheGupta");
+//
+//	string str1("RADHIKA");
+//
+//	int m = 3;
+//
+//	vector<string> res;
+//
+//	string temp;
+//
+//	res = getpasswd(str, str1, m);
+//
+//	for (auto v : res)
+//
+//		cout << v << "	";
+//
+//
+//	system("pause");
+//	return 0;
+//
+//}
