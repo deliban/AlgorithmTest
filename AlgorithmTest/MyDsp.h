@@ -6,3 +6,4 @@ static void base64_decode(const char *src, int src_len, char *dst);
 void MyBase64Test(void);
 void Verfy(void);
 char * findcommon2(char a[], char b[]);
+void Palindromic(void);

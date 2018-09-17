@@ -23,15 +23,15 @@ void MySortTest(void)
 	//InsertionSort(array, len);
 	//InsertionSortDichotomy(array, len);
 	//ShellSort(array, len);
-	//BubbleSort(array, len);
+	BubbleSort(array, len);
 	//CocktailSort(array, len);
 	//SeletionSort(array, len);
 	//MergeSortRecursion(array, 0, len - 1);
 	//MergeSortIteration(array, len);
-	HeapifySort(array, len);
+	//HeapifySort(array, len);
 
 	//sort(a,a+n) 表示对a[0] a[1] a[2] ... a[n-1] 排序
-	sort(array, array + len);
+	//sort(array, array + len);
 
 	for (int i = 0; i < len; i++)
 		cout << array[i];
@@ -256,7 +256,17 @@ static void BubbleSort(int array[], int n)
 			if (array[j] > array[j + 1])
 				Swap3(array,j,j + 1); //不能用Swap1()orSwap1(),因为 &(array[j])非常量引用的初始值必须为左值
 		}
-	}
+	}	
+
+	/*交换排序*/
+	//for (int i = 0; i < n - 1; i++)
+	//{
+	//	for (int j = i + 1 ; j < n; j++)
+	//	{
+	//		if(array[j] < array[i])
+	//			Swap3(array, i, j);
+	//	}
+	//}
 }
 
 /**************************************************

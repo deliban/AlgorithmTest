@@ -18,13 +18,15 @@ Others:	nullptr
 #include <vector>
 #include<iostream>
 #include "HMAC_SHA1.h"
-
+#include "MySort.h"
 
 using namespace std;
 
 
 int main(void)
 {
+
+	MySortTest();
 
 	system("pause");
 	return 0;
