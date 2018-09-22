@@ -22,12 +22,19 @@ Others:	nullptr
 
 using namespace std;
 
+void func(char **ptr)
+{
+	*ptr = NULL;
+}
 
 int main(void)
 {
 
-	MySortTest();
-
+	char a = 'a';
+	char *ptr = &a;
+	func(&ptr);
+	cout << ptr << endl;
+	cout << a << endl;
 	system("pause");
 	return 0;
 }

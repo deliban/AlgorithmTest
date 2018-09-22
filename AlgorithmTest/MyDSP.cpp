@@ -278,7 +278,52 @@ void Palindromic(void)
 		printf("\n");//为方便阅读结果，加一个换行。
 	}
 }
+/***********************************************************************
+Function:  char FindFirstChar(char str[])            //函数名字
+Desc:    找出字符串中第一个只出现一次的字符         //函数功能描述
+Input:    char str[]                               //要查询的字符串
+* @param  str[]  -要查询的字符串                   //参数说明
+Output:  无 char                                  // 
+Return:  char                                     // 返回字符串中第一个只出现一次的字符，没有则返回 '\0'
+Others:  无                                      //
+** C/C++字符使用Ascii编码，一个字符占一个字节即可以表示2的8次方个数，那么C/C++字符可以表示的256个字符，
+** 因此可以用一个256的数组来保存各个字符出现的次数，当然256个字符的Ascii值是0-255之间的所有数，而且
+** ’\0’的Ascii值0，所以可以用数组的下标来表示记录的是哪一个字符的个数。然后再遍历一次字符串，找出
+** 第一个只出现一次的字符。本文来自 Ego_Bai 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/ego_bai/article/details/80461304?utm_source=copy
+** 其他方法1：暴力求解O(n^2)
 
+---------------------
+
+本文来自 Ego_Bai 的CSDN 博客 ，全文地址请点击：https://blog.csdn.net/ego_bai/article/details/80461304?utm_source=copy 
+**************************************************************************/
+char FindFirstChar(char str[])
+{
+	if (str == NULL || str[0] == '\0')
+	{
+		return '\0';
+	}
+
+	int count[256] = { 0 };
+	int i;
+	while (str[i])
+	{
+		count[str[i]]++;
+		i++;
+	}
+
+	i = 0;
+	while (str[i])
+	{
+		if (count[str[i]] == 1)
+		{
+			return str[i];
+		}
+		i++;			
+	}
+
+	return '\0';
+
+}
 
 /***********************************************************************
 输出数组中第几大数字在数组中的位置
@@ -547,3 +592,51 @@ int main(void)
 //	return 0;
 //
 //}
+/*class A {
+public:A();
+	   virtual~A();
+	   virtual void fun1()
+	   {
+		   printf("123");
+	   }
+};
+A::A() {}
+A::~A()
+{
+	printf("Delete class A\n");
+}
+
+class B : public A
+{
+public:B();
+	   ~B();
+	   void fun2()
+	   {
+		   printf("123456");
+	   }
+};
+
+B::B() { }
+B::~B()
+{
+	printf("Delete class B\n");
+}
+
+A *a = new B;
+//B *b=new A; //无法从“A *”转换为“B *”
+
+B *c = new B;
+A *d = new A;
+
+int main(void)
+{
+
+	//MySortTest();
+	B *b = new B();
+	A *a = b;
+
+	delete a;
+	system("pause");
+	return 0;
+}
+*/
