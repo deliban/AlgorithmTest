@@ -160,6 +160,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\List.cpp" />
+    <ClCompile Include="..\sort.cpp" />
     <ClCompile Include="HMAC_SHA1.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MyConversion.cpp" />

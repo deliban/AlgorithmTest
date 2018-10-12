@@ -304,7 +304,7 @@ char FindFirstChar(char str[])
 	}
 
 	int count[256] = { 0 };
-	int i;
+	int i = 0;
 	while (str[i])
 	{
 		count[str[i]]++;
