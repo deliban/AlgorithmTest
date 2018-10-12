@@ -18,18 +18,18 @@ Others:	nullptr
 *******************************************************/
 void MySortTest(void)
 {
-	int array[] = { 6,5,3,1,8,7,2,4};
+	int array[] = { 6,5,3,4,8,7,2,1};
 	int len = sizeof(array) / sizeof(int);
 	//InsertionSort(array, len);
 	//InsertionSortDichotomy(array, len);
 	//ShellSort(array, len);
-	BubbleSort(array, len);
+	//BubbleSort(array, len);
 	//CocktailSort(array, len);
 	//SeletionSort(array, len);
 	//MergeSortRecursion(array, 0, len - 1);
 	//MergeSortIteration(array, len);
 	//HeapifySort(array, len);
-
+	QuickSort(array, 0, len - 1);
 	//sort(a,a+n) 表示对a[0] a[1] a[2] ... a[n-1] 排序
 	//sort(array, array + len);
 
@@ -541,18 +541,18 @@ Others:
 int Partition(int array[], int left, int right)
 {
 	int pivot = array[right];  //pivot 中轴 ，中心点  这里每次都选择最后一个元素作为基准
-	int tail = left - 1;       // tail为小于基准的子数组最后一个元素的索引
+	int tail = left ;       // tail为小于基准的子数组最后一个元素的索引
 	for (int i = left; i < right; i++)// 遍历基准以外的其他元素
 	{
 		if (array[i] <= pivot)// 把小于等于基准的元素放到前一个子数组末尾
 		{
-			Swap3(array, ++tail, i);
+			Swap3(array, tail++, i);
 		}
 
 	}
-	Swap3(array, tail + 1, right);   // 最后把基准放到前一个子数组的后边，剩下的子数组既是大于基准的子数组
+	Swap3(array, tail , right);   // 最后把基准放到前一个子数组的后边，剩下的子数组既是大于基准的子数组
 									 // 该操作很有可能把后面元素的稳定性打乱，所以快速排序是不稳定的排序算法
-	return tail + 1;				 // 返回基准的索引
+	return tail ;				 // 返回基准的索引
 }
 
 /**************************************************
