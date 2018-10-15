@@ -2,6 +2,7 @@
 #include <iostream>
 #include<algorithm>
 #include<stdio.h>
+#include<vector>
 using namespace std;
 
 /*
@@ -579,4 +580,49 @@ void QuickSort(int array[], int left, int right)
 	QuickSort(array, left, pivot_index - 1);
 	QuickSort(array, pivot_index + 1, right);
 
+}
+
+/*
+函数模板
+当函数模板和普通函数在一起时：
+函数模板也可以被重载；
+c++编译器优先使用普通函数；
+如果函数模板可以产生一个更好的匹配，那么选择模板；
+可以通过空模板实参列表（显式使用）的语法限定编译器只通过模板匹配；
+*/
+template <typename T>
+void Swap(vector<T> &array, int i, int j)
+{
+	T temp = array[i];
+	array[i] = array[j];
+	array[j] = temp;
+}
+
+template <typename T>
+int Partition(vector<T> &array, int left, int right)
+{
+	T pivot = array[right];
+	T tail = left;
+
+	for (int i = left; i<right; i++)
+	{
+
+		if (array[i] <= pivot)
+			Swap(array, tail++, i);
+
+	}
+
+	Swap(array, tail, right);
+
+	return tail;
+}
+
+template <typename T>
+void QuitSort(vector<T> &array, int left, int right)
+{
+	if (left >= right)
+		return;
+	int pivot_index = Partition(array, left, right);
+	QuitSort(array, left, pivot_index - 1);
+	QuitSort(array, pivot_index, right);
 }

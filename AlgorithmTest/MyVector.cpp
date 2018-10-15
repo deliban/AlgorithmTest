@@ -9,6 +9,7 @@ typedef vector<int> vInt;
 void print_vec1(const vInt &v);
 void print_vec2(const vInt &v);
 void print_vec3(const vInt &v);
+void print_vec4(const vInt &v);
 
 int MyVectorTest(void)
 {
@@ -38,6 +39,7 @@ int MyVectorTest(void)
     print_vec1(v);
     print_vec2(v);
     print_vec3(v);
+	print_vec4(v);
     return 0;
 }
 
@@ -65,6 +67,11 @@ void print_vec3(const vInt &v)//方法三，将容器的内容复制到cout绑�
 {
     copy(v.begin(), v.end(), ostream_iterator<int>(cout, " "));
     cout << endl;
+}
+void print_vec4(const vInt &v)
+{
+	for (auto & i : v)
+		cout << i << " ";
 }
 
 /*****************Sring 其他函数介绍*******************/

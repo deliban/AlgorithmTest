@@ -218,14 +218,14 @@ void ConvertIntToByteArray(int data, char array[])
 }
 
 /***********************************************************************
-Function:ConvertIntToByteArray                 //函数名字
-Desc:    整型数据转成字节数组                  //函数功能描述
-Input:    int data, char array[]                     //要输入的参数
-* @param  data - 要转换的整数                   //参数说明
-* @param  array - 转换后存储的数组
-Output:  无                        // 对输出参数的说明。
-Return:  无                        // 函数返回值的说明
-Others:  无                        // 其它说明；没有就用nullptr表示
+Function: char * findcommon2(char a[], char b[])          
+Desc:                    
+Input:                        
+* @param   -         
+* @param   - 
+Output:  无                       
+Return:  无                       
+Others:  无                       
 **************************************************************************/
 char * findcommon2(char a[], char b[])
 {

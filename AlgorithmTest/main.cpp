@@ -8,27 +8,40 @@ Output:	nullptr
 Return:	nullptr
 Others:	nullptr
 *******************************************************/
-#include<iostream>
-#include <stdlib.h>
-#include "MyString.h"
-#include "MyVector.h"
-#include"MyDeque.h"
-#include"MyConversion.h"
-#include <stdio.h>
-#include <vector>
-#include<iostream>
-#include "HMAC_SHA1.h"
-#include "MySort.h"
+//#include<iostream>
+//#include <stdlib.h>
+//#include "MyString.h"
+//#include "MyVector.h"
+//#include"MyDeque.h"
+//#include"MyConversion.h"
+//#include <stdio.h>
+//#include "MySort.h"
+//#include <vector>
+//#include<iostream>
+//#include "HMAC_SHA1.h"
+//
+//using namespace std;
+//
+//
+//int main(void)
+//{
+//
+//	MySortTest();
+//	//MyVectorTest();
+//	system("pause");
+//	return 0;
+//}
 
+#include <fstream> 
 using namespace std;
 
-
-int main(void)
+int main()
 {
-
-	MySortTest();
-
+	ofstream myfile("d:\\2.txt", ios::app);
+	//myfile.open
+	myfile <<"My Blogs" << endl << "网址：" << "www.deliban.xin"<<endl;
+	myfile.close();
 	system("pause");
-	return 0;
 }
+
 
